@@ -3,307 +3,332 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gamified Learning — Engage, Explore, and Learn through interactive storytelling and game-based education." />
-  <title>Gamified Learning</title>
+  <meta name="description" content="Rooms for rent in Tampa and Largo, FL. Affordable housing with utilities included." />
+  <title>Rooms for Rent — Tampa &amp; Largo, FL</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --brand-dark:  #1a1a2e;
-      --brand-mid:   #16213e;
-      --brand-accent:#0f3460;
-      --brand-gold:  #e94560;
-      --text-light:  #eaeaea;
-      --text-muted:  #a0a0b0;
-      --card-bg:     #1e2a45;
+      --primary:     #2c7a4b;
+      --primary-dark:#1e5c38;
+      --accent:      #f4a51e;
+      --bg:          #f8f9fa;
+      --card-bg:     #ffffff;
+      --text:        #222222;
+      --text-muted:  #555555;
+      --border:      #dee2e6;
     }
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--brand-dark);
-      color: var(--text-light);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
-    /* ── Navigation ────────────────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* ── Header ───────────────────────────────────────────────── */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.25rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
-      background: rgba(26, 26, 46, 0.95);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(233, 69, 96, 0.25);
+      flex-wrap: wrap;
+      gap: 0.75rem;
     }
-
-    nav .logo {
-      font-size: 1.4rem;
+    header h1 {
+      font-size: 1.5rem;
       font-weight: 700;
-      color: var(--brand-gold);
+    }
+    header .contact-pill {
+      background: var(--accent);
+      color: #111;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
       text-decoration: none;
+      white-space: nowrap;
+    }
+    header .contact-pill:hover { filter: brightness(1.1); }
+
+    /* ── Hero banner ──────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 2rem;
+    }
+    .hero h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
+    /* ── Listings ─────────────────────────────────────────────── */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
       gap: 2rem;
     }
 
-    nav ul a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    nav ul a:hover { color: var(--brand-gold); }
-
-    /* ── Hero ──────────────────────────────────────────────────── */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      padding: 5rem 2rem;
-      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-accent) 100%);
-    }
-
-    .hero-text { flex: 1 1 340px; max-width: 560px; }
-    .hero-text h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .hero-text h1 span { color: var(--brand-gold); }
-    .hero-text p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.75rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: filter 0.2s, transform 0.15s;
-    }
-    .btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
-    .btn-primary { background: var(--brand-gold); color: #fff; }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--brand-gold);
-      color: var(--brand-gold);
-      margin-left: 1rem;
-    }
-
-    .hero-cover {
-      flex: 0 0 260px;
+    .listing {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
-    .hero-cover img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ── Section titles ────────────────────────────────────────── */
-    section { padding: 4rem 2rem; }
-    .section-inner { max-width: 1100px; margin: auto; }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    h2 span { color: var(--brand-gold); }
-    .section-sub {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── Features ──────────────────────────────────────────────── */
-    #features { background: var(--brand-mid); }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(233,69,96,0.2);
-      border-radius: 10px;
-      padding: 1.75rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .feature-card:hover {
+    .listing:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
-    .feature-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
-    .feature-card h3 { margin-bottom: 0.5rem; }
-    .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-    /* ── Gallery ───────────────────────────────────────────────── */
-    #gallery { background: var(--brand-dark); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+    .listing-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.25rem 1.5rem;
     }
-    .gallery-grid figure {
+    .listing-header .city {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
+      margin-bottom: 0.25rem;
+    }
+    .listing-header h3 {
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+    .listing-header .price {
+      display: inline-block;
+      background: var(--accent);
+      color: #111;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 6px;
+      margin-top: 0.6rem;
+    }
+
+    .listing-body {
+      padding: 1.5rem;
+    }
+    .listing-body .address {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .amenity-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 1.4rem;
+    }
+    .amenity-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .amenity-list li .icon { flex-shrink: 0; }
+
+    .listing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 7px;
+      font-size: 0.93rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    /* ── Contact section ──────────────────────────────────────── */
+    .contact-section {
+      background: var(--primary-dark);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .contact-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-section p {
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .contact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      padding: 1rem 1.5rem;
+      text-align: left;
+      min-width: 220px;
     }
-    .gallery-grid figure img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s;
+    .contact-card .label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      opacity: 0.7;
+      margin-bottom: 0.3rem;
     }
-    .gallery-grid figure:hover img { transform: scale(1.04); }
-
-    /* ── Download CTA ──────────────────────────────────────────── */
-    #download {
-      background: linear-gradient(135deg, var(--brand-accent), var(--brand-mid));
-      text-align: center;
-    }
-    #download p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 2rem;
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
       font-size: 1.05rem;
+      font-weight: 600;
     }
+    .contact-card a:hover { text-decoration: underline; }
 
-    /* ── Footer ────────────────────────────────────────────────── */
+    /* ── Footer ───────────────────────────────────────────────── */
     footer {
-      background: var(--brand-dark);
-      border-top: 1px solid rgba(233,69,96,0.2);
+      background: #111;
+      color: #888;
       text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.85rem;
     }
-    footer a { color: var(--brand-gold); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
 
-    @media (max-width: 600px) {
-      nav ul { gap: 1rem; }
-      .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+    @media (max-width: 520px) {
+      main { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a class="logo" href="#hero">🎮 Gamified Learning</a>
-    <ul>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#download">Play</a></li>
-    </ul>
-  </nav>
+  <!-- Header -->
+  <header>
+    <h1>🏠 Rooms for Rent — Tampa &amp; Largo, FL</h1>
+    <a class="contact-pill" href="tel:7275107980">📞 727-510-7980</a>
+  </header>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-text">
-      <h1>Learn Through <span>Adventure</span> &amp; Discovery</h1>
-      <p>
-        Dive into immersive, story-driven experiences designed to make learning
-        unforgettable. Explore mysteries, solve puzzles, and grow your knowledge
-        one challenge at a time.
-      </p>
-      <a class="btn btn-primary" href="#download">Start Your Journey</a>
-      <a class="btn btn-outline" href="#features">Learn More</a>
-    </div>
-    <div class="hero-cover">
-      <img src="assets/cover.png" alt="The Mystery of the Seven Stars — cover art" />
-    </div>
-  </section>
+  <div class="hero">
+    <h2>Affordable Rooms Available Now</h2>
+    <p>Comfortable, move-in-ready rooms with utilities &amp; WiFi included. Contact Sheila today to schedule a tour!</p>
+  </div>
 
-  <!-- Features -->
-  <section id="features">
-    <div class="section-inner">
-      <h2>Why <span>Gamified Learning</span>?</h2>
-      <p class="section-sub">Proven methods, wrapped in engaging gameplay.</p>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="icon">🧩</div>
-          <h3>Story-Driven Puzzles</h3>
-          <p>Every challenge is woven into a compelling narrative that keeps learners hooked from start to finish.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">🏆</div>
-          <h3>Progress &amp; Rewards</h3>
-          <p>Earn badges and unlock new chapters as you master concepts and advance through the adventure.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">🤝</div>
-          <h3>Collaborative Play</h3>
-          <p>Team up with classmates or friends to tackle group challenges that reinforce critical thinking.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon">📊</div>
-          <h3>Track Your Growth</h3>
-          <p>Detailed progress dashboards help learners and educators measure real-world skill development.</p>
+  <!-- Listings -->
+  <main>
+
+    <!-- Tampa Listing -->
+    <article class="listing">
+      <div class="listing-header">
+        <div class="city">📍 Tampa, FL</div>
+        <h3>Room for Rent — Near Busch Gardens</h3>
+        <span class="price">$850 / month</span>
+      </div>
+      <div class="listing-body">
+        <p class="address">
+          <span class="icon">🗺️</span>
+          926 E Poinsettia Ave, Tampa, FL 33612
+        </p>
+        <ul class="amenity-list">
+          <li><span class="icon">💡</span> Utilities, trash pickup &amp; WiFi included</li>
+          <li><span class="icon">🚗</span> Available now — move in immediately</li>
+          <li><span class="icon">🧺</span> Built-in laundry (washer &amp; dryer)</li>
+          <li><span class="icon">🍳</span> Kitchen with oven, fridge &amp; freezer</li>
+          <li><span class="icon">📍</span> Great central location with easy access to local amenities and transportation</li>
+        </ul>
+        <div class="listing-actions">
+          <a class="btn btn-primary"
+             href="https://drive.google.com/drive/folders/1JVp5rKSMxX6PUWwh8s15ceHhN4qxBHxa"
+             target="_blank" rel="noopener noreferrer">📸 View Photos</a>
+          <a class="btn btn-outline" href="tel:7275107980">📞 Schedule a Tour</a>
         </div>
       </div>
-    </div>
-  </section>
+    </article>
 
-  <!-- Gallery -->
-  <section id="gallery">
-    <div class="section-inner">
-      <h2>Inside the <span>Adventure</span></h2>
-      <p class="section-sub">A glimpse into the world of The Mystery of the Seven Stars.</p>
-      <div class="gallery-grid">
-        <figure>
-          <img src="assets/gallery-1.png" alt="Scene 1 from The Mystery of the Seven Stars" />
-        </figure>
-        <figure>
-          <img src="assets/gallery-2.png" alt="Scene 2 from The Mystery of the Seven Stars" />
-        </figure>
-        <figure>
-          <img src="assets/gallery-3.png" alt="Scene 3 from The Mystery of the Seven Stars" />
-        </figure>
+    <!-- Largo Listing -->
+    <article class="listing">
+      <div class="listing-header">
+        <div class="city">📍 Largo, FL</div>
+        <h3>Room for Rent — Great Location</h3>
+        <span class="price">$1,000 / month</span>
       </div>
-    </div>
-  </section>
+      <div class="listing-body">
+        <p class="address">
+          <span class="icon">🗺️</span>
+          1142 7th St NW, Largo, FL 33770
+        </p>
+        <ul class="amenity-list">
+          <li><span class="icon">💡</span> Utilities, trash pickup &amp; WiFi included</li>
+          <li><span class="icon">🏠</span> Well-maintained property</li>
+          <li><span class="icon">🧺</span> Built-in laundry (washer &amp; dryer)</li>
+          <li><span class="icon">🍳</span> Kitchen with oven, fridge &amp; freezer</li>
+          <li><span class="icon">📍</span> Conveniently located, close to shopping, dining &amp; parks</li>
+        </ul>
+        <div class="listing-actions">
+          <a class="btn btn-primary"
+             href="https://drive.google.com/drive/folders/1rq4JYVN-X7xNK-JRJL_yLGMoB9EfGswp"
+             target="_blank" rel="noopener noreferrer">📸 View Photos</a>
+          <a class="btn btn-outline" href="tel:7275107980">📞 Schedule a Tour</a>
+        </div>
+      </div>
+    </article>
 
-  <!-- Download / Play CTA -->
-  <section id="download">
-    <div class="section-inner">
-      <h2>Ready to <span>Play</span>?</h2>
-      <p>
-        Download <strong>The Mystery of the Seven Stars</strong> and begin your
-        first gamified learning adventure today — no special software required.
-      </p>
-      <a class="btn btn-primary"
-         href="assets/mystery-of-the-seven-stars.pdf"
-         download="The Mystery of the Seven Stars.pdf">
-        📥 Download the Adventure
-      </a>
+  </main>
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <h2>Interested? Get in Touch</h2>
+    <p>Contact Sheila to ask questions or schedule a showing.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="label">📞 Phone / Text</div>
+        <a href="tel:7275107980">727-510-7980</a>
+      </div>
+      <div class="contact-card">
+        <div class="label">✉️ Email</div>
+        <a href="mailto:gulfnexus@gmail.com">gulfnexus@gmail.com</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>
-      &copy; <span id="year"></span> Gamified Learning &mdash;
-      <a href="https://github.com/DevOps-Nexus/Game-Theory">GitHub</a>
-    </p>
+    <p>&copy; <span id="year"></span> Gulf Nexus Rentals — Tampa &amp; Largo, FL</p>
   </footer>
 
   <script>
