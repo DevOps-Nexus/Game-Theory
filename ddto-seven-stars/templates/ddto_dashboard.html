@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D.D.T.O. Dashboard – gamifiedlearning.org</title>
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --secondary: #16213e;
+      --accent: #e94560;
+      --gold: #f5c518;
+      --text: #eaeaea;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      background: var(--secondary);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--accent);
+    }
+    header h1 { color: var(--gold); font-size: 2rem; }
+    header p { color: var(--text); margin-top: 0.5rem; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .stars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .star-card {
+      background: var(--secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(233, 69, 96, 0.3);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .star-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+    .star-card h3 { color: var(--gold); margin-bottom: 0.75rem; }
+    .star-card p { line-height: 1.6; }
+    .status { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin-top: 0.5rem; }
+    .status.pass { background: #2ecc71; color: #fff; }
+    .status.warn { background: #f39c12; color: #fff; }
+    .status.fail { background: #e74c3c; color: #fff; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 3rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⭐ D.D.T.O. Seven Stars Dashboard</h1>
+    <p>Legend of the Seven Stars – Repository Health Protocol</p>
+  </header>
+  <div class="container">
+    <div class="stars-grid">
+      <div class="star-card">
+        <h3>⭐ Star 1: Repository Health</h3>
+        <p>Git repository status and integrity check.</p>
+        <span class="status pass">Passing</span>
+      </div>
+      <div class="star-card">
+        <h3>⭐ Star 2: Branch Analysis</h3>
+        <p>Current branch and branching strategy review.</p>
+        <span class="status pass">Passing</span>
+      </div>
+      <div class="star-card">
+        <h3>⭐ Star 3: File Inventory</h3>
+        <p>Tracked file count and organization audit.</p>
+        <span class="status pass">Passing</span>
+      </div>
+      <div class="star-card">
+        <h3>⭐ Star 4: Commit History</h3>
+        <p>Commit frequency, messages, and contribution patterns.</p>
+        <span class="status pass">Passing</span>
+      </div>
+      <div class="star-card">
+        <h3>⭐ Star 5: Documentation</h3>
+        <p>Presence and quality of README, LICENSE, CONTRIBUTING, and CODE_OF_CONDUCT.</p>
+        <span class="status warn">Review</span>
+      </div>
+      <div class="star-card">
+        <h3>⭐ Star 6: CI/CD</h3>
+        <p>GitHub Actions workflow configuration and health.</p>
+        <span class="status pass">Passing</span>
+      </div>
+      <div class="star-card">
+        <h3>⭐ Star 7: Summary</h3>
+        <p>Overall protocol evaluation and next steps.</p>
+        <span class="status pass">Complete</span>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>D.D.T.O. Seven Stars Protocol &mdash; <a href="https://gamifiedlearning.org">gamifiedlearning.org</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constellation Map – gamifiedlearning.org</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --gold: #f0c040;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 { color: var(--gold); font-size: 2.25rem; }
+    header p { color: var(--muted); margin-top: 0.5rem; font-size: 1.1rem; }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .repo-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .repo-card:hover { border-color: var(--accent); }
+    .repo-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .repo-card h3 a { color: var(--accent); text-decoration: none; }
+    .repo-card h3 a:hover { text-decoration: underline; }
+    .repo-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+    .stars-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌌 Constellation Map</h1>
+    <p>D.D.T.O. Seven Stars – Multi-Repository Overview</p>
+  </header>
+  <div class="container">
+    <div class="repo-grid">
+      <div class="repo-card">
+        <h3><a href="#">Game-Theory</a></h3>
+        <p>Core repository for the Game Theory project.</p>
+        <span class="stars-badge">⭐ 7/7 Stars</span>
+      </div>
+      <div class="repo-card">
+        <h3><a href="#">Repository-2</a></h3>
+        <p>Description of repository 2.</p>
+        <span class="stars-badge">⭐ 5/7 Stars</span>
+      </div>
+      <div class="repo-card">
+        <h3><a href="#">Repository-3</a></h3>
+        <p>Description of repository 3.</p>
+        <span class="stars-badge">⭐ 6/7 Stars</span>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Constellation Map &mdash; <a href="https://gamifiedlearning.org">gamifiedlearning.org</a></p>
+  </footer>
+</body>
+</html>
