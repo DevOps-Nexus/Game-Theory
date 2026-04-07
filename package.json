@@ -1,0 +1,22 @@
+{
+  "name": "game-theory",
+  "version": "1.0.0",
+  "description": "Gamified Learning — an interactive, story-driven platform that makes education engaging through puzzles, narratives, and game-based challenges.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  },
+  "keywords": [
+    "game-theory",
+    "gamified-learning",
+    "education",
+    "self-hosted"
+  ],
+  "license": "MIT"
+}
