@@ -1,0 +1,45 @@
+name: Node.js CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'server.js'
+      - 'package.json'
+      - '.nvmrc'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'server.js'
+      - 'package.json'
+      - '.nvmrc'
+
+permissions:
+  contents: read
+
+jobs:
+  node:
+    name: Node.js
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read .nvmrc
+        id: nvmrc
+        run: echo "version=$(cat .nvmrc | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ steps.nvmrc.outputs.version }}
+
+      - name: Verify Node.js version
+        run: node --version
+
+      - name: Verify npm version
+        run: npm --version
+
+      - name: Run tests
+        run: npm test
